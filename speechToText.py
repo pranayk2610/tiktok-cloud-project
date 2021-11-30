@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 import speech_recognition as sr
 
 # obtain path to "english.wav" in the same folder as this script
@@ -33,7 +35,18 @@ except sr.RequestError as e:
     print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
 # # recognize speech using Google Cloud Speech
-# GOOGLE_CLOUD_SPEECH_CREDENTIALS = r"""INSERT THE CONTENTS OF THE GOOGLE CLOUD SPEECH JSON CREDENTIALS FILE HERE"""
+# GOOGLE_CLOUD_SPEECH_CREDENTIALS = r"""{
+#   "type": "service_account",
+#   "project_id": "central-hangar-333703",
+#   "private_key_id": "e8f2e45a260fce1015c2a73b251339d18aa1532b",
+#   "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC1fbDXn87hJ9mQ\ntQrHSj9Y9HNo6vcRjNm/jOtUoaoDTPSBC43sRIb1mGYqkQ3Ts3k5CPIAOwWJ+Ybh\nQylPcR3JCM/K+oLnL9yAZ8vbIbAk/9ql6pe/NiwQjx1T+/lBR/9+nmT2GcymgJaj\nsFa8IAI1/9V5+nwn7q4ejAHISHd3lmy6Dj7GzTo5Kn1nSdhMAE4A5AE1SGLHhGqI\nngs/DSbDcDjFl8tCDa+6A4YBsTCrl8nHcoe2REqPS53ZPwdhUf2/L4ZLmh4j90/l\nCjMnMCnGpBMIfLspb64P20UrYC9nf/gG8BVvZ3Gg4Ac1t9eccEDo2Gp0xIjesYgX\nvOH92XgVAgMBAAECggEAIYtesSvfX+wuoTllCZqmhLmBz0WGbt76rBXOtTDALKX/\nlw5cp+uuihwl3f47cQJ+CFWn7PT7vBm7nUz9iKpel/ah+WE96p8FAVKt8g2S8fO8\nJOhsLbJEiLb687fhxPgat/tsq7PvCGNB9HU2QsUjw3lKqqXqZrMNyaWU+sCyHA8I\nKRcEFldbr+TohfP/Lf3vUSV9nePcSSm9uB8n5MSR9Hjs5jgtBejdIhTOEF5MXSKY\nqUOFdVMZ7UQXI4Inx0O/6IE1FSHMWhKWBWsPh8xQfNSeR2P+gGSWuhRGgia/7Lv1\nOOWzyDaC5YBjAhhFMvJOPhdrsvCbz2I1PcQAfGmNTQKBgQD1FH8eAStiX5Ew1YI8\nKxnn19LHp/2eGj0whKqZ/2ZKRDpPnOtHyxGI++SZbeaeP/BK6nk8EVWrwbL5xTLz\ngB/gcEaJkwOw6Lqw5BQXvOnbA0uAG8ln4krQnFmPYC0D/HtgS3IVJHZ8VWNFitRO\nSuEYH0NcN1lkITisrMRt4kajZwKBgQC9k92uN2jy8FkQJjzBLV3oOCPeywlVK/Tu\nnHAMzICSYMIxSYlBoSvkkoA5NOlkNjTYn6NehT1sxToJAM8JInKHOmLgpcJrCUFl\nPlrVlx/8MC98iw3d8//rcvpwJauiNC1G9chAtkFO/Rgap2q59xf6mb3Dxq3u6UMU\nBCAzrno3IwKBgD4iByQtObmD7wRJbO4iIzwy7D4v6c12a4Lsb3ABXwZ/C6V5a/DU\nm8p1yfvX7/q4zQvBLCE9Z9HWlrBZ/VPcbLhy3n8sZWgpaINGH43xF/ytdiuxX7tV\nlJAUw2PlBySWkxTTq8WOa/eTkkpkKvT6aNy7uFEduyz2ey7T0izli/ELAoGAF0NP\nzpMKE9WeeDbY+bOBdH9/F1W+3W65bZZQwaFOnae17KpjZ2RJqJC5n0t44E0uiu57\n85tSAEjraDNrNGm/uAxYGcz9YHkQR0Yxi0gyKpYXHadKmlPYsaG4TY6x0wOoEq8S\nVa6HsROpo4urswo5LQ00lhOJQGnrS0d+VBky8hUCgYEA8sBTVqNp55YV4pDu5R9f\n9m8wzi5iGrtZh2PcqjdEWWqW4d1nu/rSHqTCwgVM53x9tUOXMW5UwZdk8Yjp1NQS\nhosNjQldPIYL6S9oMpt1CUTIOLrGvNLK7uTSjtid/dpTbj3UKCl7OReyBvCn6hUZ\n5bzllUK/vROQunrSs+44DDg=\n-----END PRIVATE KEY-----\n",
+#   "client_email": "tiktokcloud@central-hangar-333703.iam.gserviceaccount.com",
+#   "client_id": "110193573904094277009",
+#   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+#   "token_uri": "https://oauth2.googleapis.com/token",
+#   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+#   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tiktokcloud%40central-hangar-333703.iam.gserviceaccount.com"
+# }"""
 # try:
 #     print("Google Cloud Speech thinks you said " + r.recognize_google_cloud(audio, credentials_json=GOOGLE_CLOUD_SPEECH_CREDENTIALS))
 # except sr.UnknownValueError:
@@ -42,16 +55,16 @@ except sr.RequestError as e:
 #     print("Could not request results from Google Cloud Speech service; {0}".format(e))
 
 # # recognize speech using Wit.ai
-# WIT_AI_KEY = "INSERT WIT.AI API KEY HERE"  # Wit.ai keys are 32-character uppercase alphanumeric strings
-# try:
-#     print("Wit.ai thinks you said " + r.recognize_wit(audio, key=WIT_AI_KEY))
-# except sr.UnknownValueError:
-#     print("Wit.ai could not understand audio")
-# except sr.RequestError as e:
-#     print("Could not request results from Wit.ai service; {0}".format(e))
+WIT_AI_KEY = "DLN5VNNDCK2KBY2Q4JX2NMSQ4DVUF3AB"  # Wit.ai keys are 32-character uppercase alphanumeric strings
+try:
+    print("Wit.ai thinks you said " + r.recognize_wit(audio, key=WIT_AI_KEY))
+except sr.UnknownValueError:
+    print("Wit.ai could not understand audio")
+except sr.RequestError as e:
+    print("Could not request results from Wit.ai service; {0}".format(e))
 
 # # recognize speech using Microsoft Azure Speech
-# AZURE_SPEECH_KEY = "INSERT AZURE SPEECH API KEY HERE"  # Microsoft Speech API keys 32-character lowercase hexadecimal strings
+# AZURE_SPEECH_KEY = "34feb73f-62d6-4866-ba11-005dab60a894"  # Microsoft Speech API keys 32-character lowercase hexadecimal strings
 # try:
 #     print("Microsoft Azure Speech thinks you said " + r.recognize_azure(audio, key=AZURE_SPEECH_KEY))
 # except sr.UnknownValueError:
@@ -79,11 +92,11 @@ except sr.RequestError as e:
 #     print("Could not request results from Houndify service; {0}".format(e))
 
 # # recognize speech using IBM Speech to Text
-# IBM_USERNAME = "INSERT IBM SPEECH TO TEXT USERNAME HERE"  # IBM Speech to Text usernames are strings of the form XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-# IBM_PASSWORD = "INSERT IBM SPEECH TO TEXT PASSWORD HERE"  # IBM Speech to Text passwords are mixed-case alphanumeric strings
-# try:
-#     print("IBM Speech to Text thinks you said " + r.recognize_ibm(audio, username=IBM_USERNAME, password=IBM_PASSWORD))
-# except sr.UnknownValueError:
-#     print("IBM Speech to Text could not understand audio")
-# except sr.RequestError as e:
-#     print("Could not request results from IBM Speech to Text service; {0}".format(e))
+IBM_USERNAME = "1af43f5d-d4b8-41b7-86ed-9bd6fe3af7ec"  # IBM Speech to Text usernames are strings of the form XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+IBM_PASSWORD = "q2KvlsrAPFJuEmmso8DUxM400leEmbIfUYnlGeJbpJWP"  # IBM Speech to Text passwords are mixed-case alphanumeric strings
+try: 
+    print("IBM Speech to Text thinks you said " + r.recognize_ibm(audio, username=IBM_USERNAME, password=IBM_PASSWORD))
+except sr.UnknownValueError:
+    print("IBM Speech to Text could not understand audio")
+except sr.RequestError as e:
+    print("Could not request results from IBM Speech to Text service; {0}".format(e))
