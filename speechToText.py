@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+from ibm_watson import SpeechToTextV1
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
+
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 import speech_recognition as sr
@@ -92,11 +95,25 @@ except sr.RequestError as e:
 #     print("Could not request results from Houndify service; {0}".format(e))
 
 # # recognize speech using IBM Speech to Text
-IBM_USERNAME = "1af43f5d-d4b8-41b7-86ed-9bd6fe3af7ec"  # IBM Speech to Text usernames are strings of the form XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-IBM_PASSWORD = "q2KvlsrAPFJuEmmso8DUxM400leEmbIfUYnlGeJbpJWP"  # IBM Speech to Text passwords are mixed-case alphanumeric strings
-try: 
-    print("IBM Speech to Text thinks you said " + r.recognize_ibm(audio, username=IBM_USERNAME, password=IBM_PASSWORD))
-except sr.UnknownValueError:
-    print("IBM Speech to Text could not understand audio")
-except sr.RequestError as e:
-    print("Could not request results from IBM Speech to Text service; {0}".format(e))
+apikey = "q2KvlsrAPFJuEmmso8DUxM400leEmbIfUYnlGeJbpJWP"  # IBM Speech to Text usernames are strings of the form XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+url = "https://api.us-east.speech-to-text.watson.cloud.ibm.com/instances/1c3bc4c1-0bb3-4a3f-9bba-804e091749c5"  # IBM Speech to Text passwords are mixed-case alphanumeric strings
+
+authenticator = IAMAuthenticator(apikey)
+stt = SpeechToTextV1(authenticator = authenticator)
+stt.set_service_url(url)
+
+
+with open(AUDIO_FILE, 'rb') as f:
+    res = stt.recognize(audio = f, content_type = 'audio/wav', model='en-US_NarrowbandModel').get_result()
+
+# print(res)
+
+text = res['results'][0]['alternatives'][0]['transcript']
+print("IBM Speech to Text thinks you said " + text)
+
+# try: 
+#     print("IBM Speech to Text thinks you said " + r.recognize_ibm(audio, username=IBM_USERNAME, password=IBM_PASSWORD))
+# except sr.UnknownValueError:
+#     print("IBM Speech to Text could not understand audio")
+# except sr.RequestError as e:
+#     print("Could not request results from IBM Speech to Text service; {0}".format(e))
