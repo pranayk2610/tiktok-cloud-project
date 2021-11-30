@@ -33,9 +33,11 @@ pickleshare==0.7.5
 pipx==0.16.4
 platformdirs==2.4.0
 playwright==1.15.3
+pocketsphinx @ git+https://github.com/Im-Fran/pocketsphinx-python@3cce4aa2e8d9e7ea988d00a0cbe229f03eb66d8b
 prompt-toolkit==3.0.22
 protobuf==3.19.1
 ptyprocess==0.7.0
+PyAudio==0.2.11
 pyee==8.2.2
 Pygments==2.10.0
 pylint==2.11.1
@@ -46,6 +48,7 @@ requests==2.26.0
 selenium==3.141.0
 selenium-stealth==1.0.6
 six==1.16.0
+SpeechRecognition==3.8.1
 stevedore==3.5.0
 TikTokApi==4.0.4
 toml==0.10.2
