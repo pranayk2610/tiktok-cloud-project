@@ -15,11 +15,7 @@ else:
 
 tiktoks = api.by_hashtag(hashtag=search, count=count)
 
-video_bytes = api.get_video_by_tiktok(tiktoks[0], custom_device_id=device_id)
-
-pprint.pp(tiktoks[0])
-
-with open("video.mp4", "wb") as out:
-    out.write(video_bytes)
-
-
+for tiktok in tiktoks:
+    video_bytes = api.get_video_by_tiktok(tiktok, custom_device_id=device_id)
+    with open(f"downloaded_vids/{tiktok['author']['uniqueId']}_{tiktok['id']}.mp4", "wb") as out:
+        out.write(video_bytes)
