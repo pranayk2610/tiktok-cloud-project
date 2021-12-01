@@ -9,7 +9,7 @@ import speech_recognition as sr
 
 # obtain path to "english.wav" in the same folder as this script
 from os import path
-AUDIO_FILE = path.join(path.dirname(path.realpath(__file__)), "video.wav")
+AUDIO_FILE = path.join(path.dirname(path.realpath(__file__)), "english.wav")
 # AUDIO_FILE = path.join(path.dirname(path.realpath(__file__)), "french.aiff")
 # AUDIO_FILE = path.join(path.dirname(path.realpath(__file__)), "chinese.flac")
 
@@ -18,6 +18,9 @@ r = sr.Recognizer()
 with sr.AudioFile(AUDIO_FILE) as source:
     audio = r.record(source)  # read the entire audio file
 
+r.adjust_for_ambient_noise = 50
+print('\n')
+
 # recognize speech using Sphinx
 try:
     print("Sphinx thinks you said " + r.recognize_sphinx(audio))
@@ -25,6 +28,8 @@ except sr.UnknownValueError:
     print("Sphinx could not understand audio")
 except sr.RequestError as e:
     print("Sphinx error; {0}".format(e))
+
+print('\n')
 
 # recognize speech using Google Speech Recognition
 try:
@@ -37,6 +42,7 @@ except sr.UnknownValueError:
 except sr.RequestError as e:
     print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
+print('\n')
 # # recognize speech using Google Cloud Speech
 # GOOGLE_CLOUD_SPEECH_CREDENTIALS = r"""{
 #   "type": "service_account",
@@ -66,6 +72,7 @@ except sr.UnknownValueError:
 except sr.RequestError as e:
     print("Could not request results from Wit.ai service; {0}".format(e))
 
+print('\n')
 # # recognize speech using Microsoft Azure Speech
 # AZURE_SPEECH_KEY = "34feb73f-62d6-4866-ba11-005dab60a894"  # Microsoft Speech API keys 32-character lowercase hexadecimal strings
 # try:
@@ -85,14 +92,16 @@ except sr.RequestError as e:
 #     print("Could not request results from Microsoft Bing Voice Recognition service; {0}".format(e))
 
 # # recognize speech using Houndify
-# HOUNDIFY_CLIENT_ID = "INSERT HOUNDIFY CLIENT ID HERE"  # Houndify client IDs are Base64-encoded strings
-# HOUNDIFY_CLIENT_KEY = "INSERT HOUNDIFY CLIENT KEY HERE"  # Houndify client keys are Base64-encoded strings
-# try:
-#     print("Houndify thinks you said " + r.recognize_houndify(audio, client_id=HOUNDIFY_CLIENT_ID, client_key=HOUNDIFY_CLIENT_KEY))
-# except sr.UnknownValueError:
-#     print("Houndify could not understand audio")
-# except sr.RequestError as e:
-#     print("Could not request results from Houndify service; {0}".format(e))
+HOUNDIFY_CLIENT_ID = "nt8BIyFxK4j-pBpLd4y9RQ=="  # Houndify client IDs are Base64-encoded strings
+HOUNDIFY_CLIENT_KEY = "Nd9sfmOzaOTys7-bqcV-XD0N73h0hc2ZrC4UfEqBVMF4jaiOEQce7MkWvzkN84x1-0DdkMEwLeQecuVEST0Nww=="  # Houndify client keys are Base64-encoded strings
+try:
+    print("Houndify thinks you said " + r.recognize_houndify(audio, client_id=HOUNDIFY_CLIENT_ID, client_key=HOUNDIFY_CLIENT_KEY))
+except sr.UnknownValueError:
+    print("Houndify could not understand audio")
+except sr.RequestError as e:
+    print("Could not request results from Houndify service; {0}".format(e))
+
+print('\n')
 
 # # recognize speech using IBM Speech to Text
 apikey = "q2KvlsrAPFJuEmmso8DUxM400leEmbIfUYnlGeJbpJWP"  # IBM Speech to Text usernames are strings of the form XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -104,13 +113,14 @@ stt.set_service_url(url)
 
 
 with open(AUDIO_FILE, 'rb') as f:
-    res = stt.recognize(audio = f, content_type = 'audio/wav', model='en-US_NarrowbandModel').get_result()
+    res = stt.recognize(audio = f, content_type = 'audio/wav', model='en-US_BroadbandModel').get_result()
 
-# print(res)
+print(res)
 
 text = res['results'][0]['alternatives'][0]['transcript']
 print("IBM Speech to Text thinks you said " + text)
 
+print('\n')
 # try: 
 #     print("IBM Speech to Text thinks you said " + r.recognize_ibm(audio, username=IBM_USERNAME, password=IBM_PASSWORD))
 # except sr.UnknownValueError:

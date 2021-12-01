@@ -10,8 +10,8 @@ if (len(sys.argv) > 1):
     count = sys.argv[1]
     search = sys.argv[2]
 else:
-    count = 3
-    search = 'domesticviolence'
+    count = 6
+    search = 'domesticabuseawareness'
 
 tiktoks = api.by_hashtag(hashtag=search, count=count)
 
