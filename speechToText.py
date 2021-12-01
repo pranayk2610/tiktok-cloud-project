@@ -2,7 +2,8 @@
 
 from ibm_watson import SpeechToTextV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
-
+from pocketsphinx.pocketsphinx import *
+from sphinxbase.sphinxbase import *
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 import speech_recognition as sr
