@@ -11,18 +11,16 @@ ytdl_opts = {
 }
 
 if (len(sys.argv) > 1):
-    if (sys.argv[1] == 'link'):
+    if (sys.argv[1] == '-link'):
         with youtube_dl.YoutubeDL(ytdl_opts) as ydl:
             ydl.download([sys.argv[2]])
+        exit()
     else:
         count = int(sys.argv[1])
         search = sys.argv[2]
 else:
     count = 3
     search = 'triggerwarning'
-
-if (len(sys.argv) > 1 and sys.argv[1] == 'link'):
-    exit()
 
 tiktoks = api.by_hashtag(hashtag=search, count=count)
 
