@@ -1,1 +1,9 @@
-{'result_index': 0, 'results': [{'final': True, 'alternatives': [{'transcript': "so I was stopped using GPS and Bluetooth and a lot of people don't know about Bluetooth attacks so wanted to take a minute to let you know more about them this type of attack is called blue star theme blue starving yes you heard me ", 'confidence': 0.82}]}, {'final': True, 'alternatives': [{'transcript': 'so Bluetooth is turned on on your phone and you have it set to discoverable theoretically you could be at risk for this ', 'confidence': 0.97}]}, {'final': True, 'alternatives': [{'transcript': "the attacker can get your text messages your pictures your emails your calendar your contacts and a bunch of other stuff this leaves victims of abuse any very very vulnerable place so I recommend keeping your Bluetooth off when you're not using it and also make sure that it can't be discovered ", 'confidence': 0.94}]}, {'final': True, 'alternatives': [{'transcript': "because you don't want to end up like me and have apple tell you that you need to replace your iPhone %HESITATION phone account and everything else ", 'confidence': 0.94}]}]}
+so I was stopped using GPS and Bluetooth and a lot of people don't know about
+Bluetooth attacks so wanted to take a minute to let you know more about them this 
+type of attack is called blue star theme blue starving yes you heard me 
+so Bluetooth is turned on on your phone and you have it set to discoverable theoretically 
+you could be at risk for this the attacker can get your text messages your pictures your emails 
+your calendar your contacts and a bunch of other stuff this leaves victims of abuse any very very 
+vulnerable place so I recommend keeping your Bluetooth off when you're not using it and also make 
+sure that it can't be discovered because you don't want to end up like me and have apple tell you that 
+you need to replace your iPhone %HESITATION phone account and everything else 

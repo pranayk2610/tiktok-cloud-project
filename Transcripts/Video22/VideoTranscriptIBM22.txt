@@ -1,1 +1,8 @@
-{'result_index': 0, 'results': [{'final': True, 'alternatives': [{'transcript': 'okay guys ', 'confidence': 0.99}]}, {'final': True, 'alternatives': [{'transcript': "my son's school ", 'confidence': 0.88}]}, {'final': True, 'alternatives': [{'transcript': 'had a fire truck come out to spray the entire kids with water and they can have a water play date ', 'confidence': 0.81}]}, {'final': True, 'alternatives': [{'transcript': 'they said to us ', 'confidence': 0.99}]}, {'final': True, 'alternatives': [{'transcript': 'cinema whatever clothes you want ', 'confidence': 0.86}]}, {'final': True, 'alternatives': [{'transcript': 'shorts and T. shirts and ', 'confidence': 0.92}]}, {'final': True, 'alternatives': [{'transcript': 'you know whatever they want to wear just not a swimsuit and ', 'confidence': 0.82}]}, {'final': True, 'alternatives': [{'transcript': 'they can get wet to send a change of clothes ', 'confidence': 0.6}]}, {'final': True, 'alternatives': [{'transcript': 'I sent them in some sweats ', 'confidence': 0.58}]}, {'final': True, 'alternatives': [{'transcript': 'and I sent him a teacher ', 'confidence': 0.42}]}, {'final': True, 'alternatives': [{'transcript': 'every single kid was able to get in the water and place that for my son ', 'confidence': 0.85}]}, {'final': True, 'alternatives': [{'transcript': 'he came home crying so this is what I did ', 'confidence': 0.97}]}]}
+okay guys my son's school had a fire truck come out to spray the entire kids 
+with water and they can have a water play date they said to us 
+cinema whatever clothes you want shorts and T. shirts and 
+you know whatever they want to wear just not a swimsuit and 
+they can get wet to send a change of clothes 
+I sent them in some sweats and I sent him a teacher 
+every single kid was able to get in the water and place that for my son 
+he came home crying so this is what I did 

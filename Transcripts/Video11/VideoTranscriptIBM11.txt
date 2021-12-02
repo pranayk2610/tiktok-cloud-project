@@ -1,1 +1,9 @@
-{'result_index': 0, 'results': [{'final': True, 'alternatives': [{'transcript': 'this is my official statement ', 'confidence': 0.92}]}, {'final': True, 'alternatives': [{'transcript': '%HESITATION if I am ever found dead or end up missing between today April twenty ninth of twenty twenty one up until you find me or I am missing my ex boyfriend is the one who killed me or kidnapped me ', 'confidence': 0.93}]}, {'final': True, 'alternatives': [{'transcript': 'I just got done with my court trial where I filed a no contact order against my ex boyfriend and the judge threw it away ', 'confidence': 0.87}]}, {'final': True, 'alternatives': [{'transcript': 'he physically and emotionally mentally abused me for two years and he also has a weapon ', 'confidence': 0.94}]}, {'final': True, 'alternatives': [{'transcript': 'and if people ever wonder if any of you ever wonder why ', 'confidence': 0.95}]}, {'final': True, 'alternatives': [{'transcript': 'victims of domestic violence or rape or assault do not come forward this is why ', 'confidence': 0.86}]}, {'final': True, 'alternatives': [{'transcript': '**** the justice system and everybody a part of it ', 'confidence': 0.83}]}]}
+this is my official statement %HESITATION if I am ever found dead or end up 
+missing between today April twenty ninth of twenty twenty one up until 
+you find me or I am missing my ex boyfriend is the one who killed me or 
+I just got done with my court trial where I filed a no contact order 
+against my ex boyfriend and the judge threw it away 
+he physically and emotionally mentally abused me for two 
+years and he also has a weapon and if people ever wonder if any of you ever 
+wonder why victims of domestic violence or rape or assault do not come 
+forward this is why **** the justice system and everybody a part of it 

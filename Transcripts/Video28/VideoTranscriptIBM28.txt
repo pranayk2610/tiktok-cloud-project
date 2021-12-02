@@ -1,1 +1,6 @@
-{'result_index': 0, 'results': [{'final': True, 'alternatives': [{'transcript': "when I was younger I went to camp a camp over the summer and they made us have a camera games because they don't want anyone knowing you are real names and stuff so I was eleven years old I was reading Harry potter for the first time so I name myself for cracks and that was my cat nickname for all six years but the kids there didn't really know what that was so then and they started to believe me and they started calling me horse **** so for six years I was bleeding cancer campaign called a horse cart knowing that they might ", 'confidence': 0.75}]}]}
+when I was younger I went to camp a camp over the summer and they made us have a camera games 
+because they don't want anyone knowing you are real names and stuff so I was eleven years old 
+I was reading Harry potter for the first time so I name myself for cracks and that was my cat 
+nickname for all six years but the kids there didn't really know what that was so then and they 
+started to believe me and they started calling me horse **** so for six years I was bleeding 
+cancer campaign called a horse cart knowing that they might 

@@ -11,7 +11,7 @@ import sys
 
 # obtain path to "english.wav" in the same folder as this script
 from os import path
-AUDIO_FILE = path.join(path.dirname(path.realpath(__file__)), "SampleAudio/TikTokSample30.wav")
+AUDIO_FILE = path.join(path.dirname(path.realpath(__file__)), "SampleAudio/TikTokSample16-2.wav")
 # AUDIO_FILE = path.join(path.dirname(path.realpath(__file__)), "french.aiff")
 # AUDIO_FILE = path.join(path.dirname(path.realpath(__file__)), "chinese.flac")
 
@@ -26,7 +26,7 @@ print('\n')
 
 # recognize speech using Sphinx
 try:
-    with open('Transcripts/sphinx/VideoTransciptSphinx30.txt', 'w') as f:
+    with open('Transcripts/sphinx/VideoTransciptSphinx16-2.txt', 'w') as f:
         sys.stdout = f 
         print(r.recognize_sphinx(audio))
         sys.stdout = original_stdout 
@@ -42,7 +42,7 @@ try:
     # for testing purposes, we're just using the default API key
     # to use another API key, use `r.recognize_google(audio, key="GOOGLE_SPEECH_RECOGNITION_API_KEY")`
     # instead of `r.recognize_google(audio)`
-    with open('Transcripts/googlespeech/VideoTransciptGoogleSpeech30.txt', 'w') as f:
+    with open('Transcripts/googlespeech/VideoTransciptGoogleSpeech16-2.txt', 'w') as f:
         sys.stdout = f 
         print(r.recognize_google(audio))
         sys.stdout = original_stdout 
@@ -68,7 +68,7 @@ GOOGLE_CLOUD_SPEECH_CREDENTIALS = r"""{
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tiktokcloud%40central-hangar-333703.iam.gserviceaccount.com"
 }"""
 try:
-    with open('Transcripts/Video30/VideoTransciptGCloudSpeech30.txt', 'w') as f:
+    with open('Transcripts/Video16/VideoTransciptGCloudSpeech16-2.txt', 'w') as f:
         sys.stdout = f 
         print(r.recognize_google_cloud(audio, credentials_json=GOOGLE_CLOUD_SPEECH_CREDENTIALS))
         sys.stdout = original_stdout 
@@ -113,7 +113,7 @@ print('\n')
 HOUNDIFY_CLIENT_ID = "nt8BIyFxK4j-pBpLd4y9RQ=="  # Houndify client IDs are Base64-encoded strings
 HOUNDIFY_CLIENT_KEY = "Nd9sfmOzaOTys7-bqcV-XD0N73h0hc2ZrC4UfEqBVMF4jaiOEQce7MkWvzkN84x1-0DdkMEwLeQecuVEST0Nww=="  # Houndify client keys are Base64-encoded strings
 try:
-     with open('Transcripts/Video30/VideoTranscriptHoundify30.txt', 'w') as f:
+     with open('Transcripts/Video16/VideoTranscriptHoundify16-2.txt', 'w') as f:
         sys.stdout = f 
         print(r.recognize_houndify(audio, client_id=HOUNDIFY_CLIENT_ID, client_key=HOUNDIFY_CLIENT_KEY))
         sys.stdout = original_stdout
@@ -141,7 +141,7 @@ print(res)
 
 text = res['results'][0]['alternatives'][0]['transcript']
 
-with open('Transcripts/Video30/VideoTranscriptIBM30.txt', 'w') as f:
+with open('Transcripts/Video16/VideoTranscriptIBM16-2.txt', 'w') as f:
     sys.stdout = f 
     print(res)
     sys.stdout = original_stdout

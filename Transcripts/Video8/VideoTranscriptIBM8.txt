@@ -1,1 +1,14 @@
-{'result_index': 0, 'results': [{'final': True, 'alternatives': [{'transcript': 'starting at just the age of three years old this man started making my life a living hell ', 'confidence': 0.81}]}, {'final': True, 'alternatives': [{'transcript': "karma's finally starting to pay him back that's his mugshot finally at age eight years old I was walking home from school I saw a cat and a canal I saved it to get onboard credit down the line he came home and decided to beat the **** out of me after he told me go away from my punishment may my face black and blue and all ability I'll send something snapped and he said go outside and go play ", 'confidence': 0.75}]}, {'final': True, 'alternatives': [{'transcript': "like nothing happened I went over to my friend's house they called CPS turned them in cubs game everything else I was removed from the home until he had to leave two weeks later that man came back into the house that my friends is how they used to deal with freaking child abuse they did nothing ", 'confidence': 0.84}]}, {'final': True, 'alternatives': [{'transcript': "now he's being turned in for beating the **** out of his girlfriend hopefully do more because till this day I have PTSD and can't stand cats ", 'confidence': 0.87}]}]}
+starting at just the age of three years old this man started making my life a 
+living hell karma's finally starting to pay him back that's his mugshot finally 
+at age eight years old I was walking home from school I saw a cat and a canal 
+I saved it to get onboard credit down the line he came home and decided to 
+beat the **** out of me after he told me go away from my punishment may my 
+face black and blue and all ability I'll send something snapped and he said 
+go outside and go play 
+like nothing happened I went over to my friend's house they 
+called CPS turned them in cubs game everything else I was removed 
+from the home until he had to leave two weeks later that man came 
+back into the house that my friends is how they used to deal with freaking 
+child abuse they did nothing 
+now he's being turned in for beating the **** out of his girlfriend 
+hopefully do more because till this day I have PTSD and can't stand cats 
